@@ -1,0 +1,43 @@
+{
+    "name": "vssal-angular",
+    "version": "0.0.1",
+    "homepage": "https://github.com/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js",
+    "authors": [
+        "diogenespolanco"
+    ],
+    "description": "Visual Studio Sevices Auth Library for js",
+    "main": [
+        "./lib/vssal.js",
+        "./lib/vssal-angular.js"
+    ],
+    "moduleType": [
+        "node"
+    ],
+    "keywords": [
+        "vssal",
+        "oauth",
+        "tfs",
+        "vs"
+    ],
+    "licenses": [{
+        "type": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "*"
+    },
+    "devDependencies": {
+        "angular-resource": "~1.2.26",
+        "angular-mocks": "~1.2.26",
+        "jasmine": "2.0.0",
+        "angular-route": "~1.2.26",
+        "angular-ui-router": "^0.3.1"
+    }
+}

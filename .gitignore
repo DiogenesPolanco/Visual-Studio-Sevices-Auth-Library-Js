@@ -1,0 +1,48 @@
+Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+*.sass-cache
+
+#Project files
+[Bb]uild/
+
+#Subversion files
+.svn
+
+# Office Temp Files
+~$*
+
+# vim Temp Files
+*~
+#Tests
+tests/
+
+#NuGet
+packages/
+*.nupkg
+
+#bower
+bower_components
+
+#node_modules
+node_modules
+
+#ncrunch
+*ncrunch*
+*crunch*.local.xml
+
+# visual studio database projects
+*.dbmdl
+
+#Test files
+*.testsettings
+
+#copied vssal
+samples/owin/OwinSample/Scripts/vssal.js
+
+#webstorm
+.idea
+
+#codecoverage
+coverage
