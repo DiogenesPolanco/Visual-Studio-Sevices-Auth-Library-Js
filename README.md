@@ -2,7 +2,7 @@ Visual Studio Sevices Auth Library (VSSAL) for JavaScript
 ====================================
 [![Build Status](https://travis-ci.org/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js.svg?branch=master)](https://travis-ci.org/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js)
 
-Visual Studio Sevices Auth Library for JavaScript (VSSAL JS) helps you to use Azure AD for handling authentication in your single page applications.
+Visual Studio Sevices Auth Library for JavaScript (VSSAL JS) helps you to use Visual Studio Online for handling authentication in your single page applications.
 This library is optimized for working together with AngularJS.
 
 ## Versions
