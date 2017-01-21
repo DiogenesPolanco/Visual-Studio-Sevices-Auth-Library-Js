@@ -4,6 +4,15 @@ Visual Studio Sevices Auth Library (VSSAL) for JavaScript
 
 Visual Studio Sevices Auth Library for JavaScript (VSSAL JS) helps you to use Visual Studio Online for handling authentication in your single page applications.
 This library is optimized for working together with AngularJS.
+## Register your app
+Go to (https://app.vssps.visualstudio.com/app/register) to register your app.
+![](https://www.visualstudio.com/en-us/docs/integrate/get-started/auth/_img/grant-access.png)
+
+When your register your app, the application settings page is displayed.
+![](https://www.visualstudio.com/en-us/docs/integrate/get-started/auth/_img/app-settings.png)
+You'll call the authorization URL and pass your app ID and authorized scopes when you want to have a user authorize your app to access his Visual Studio Team Services account. You'll call the access token URL when you want to get an access token to call a Visual Studio Team Services REST API.
+
+The settings for each app that you register are available from your profile (https://app.vssps.visualstudio.com/profile/view).
 
 ## Versions
 Current version - 0.0.1  
