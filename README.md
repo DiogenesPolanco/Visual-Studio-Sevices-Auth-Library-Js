@@ -103,8 +103,7 @@ $routeProvider.
     </div>
 
     <script src="/Scripts/angular.min.js"></script>
-    <script src="/Scripts/angular-route.min.js"></script>
-    <script src="/Scripts/vssal.js"></script>
+    <script src="/Scripts/angular-route.min.js"></script> 
     <script src="/Scripts/vssal-angular.js"></script>
     <script src="App/Scripts/app.js"></script>
     <script src="App/Scripts/homeController.js"></script>
