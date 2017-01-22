@@ -52,8 +52,7 @@ Without the hashPrefix set, the Visual Studio Online login will loop indefinitel
 4- Initialize vssal with the Visual Studio Online app coordinates at app config time
 ```js
 	vssalAuthenticationServiceProvider.init(
-        {
-		auto: true,	   
+        { 	   
 		clientId: '00000000-0000-0000-0000-000000000000',
 		client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
 		scope: 'vso.connected_server vso.identity vso.work_write ...'
