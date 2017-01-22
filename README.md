@@ -51,18 +51,12 @@ Without the hashPrefix set, the Visual Studio Online login will loop indefinitel
 
 4- Initialize vssal with the Visual Studio Online app coordinates at app config time
 ```js
-// endpoint to resource mapping(optional)
-    var endpoints = {
-        "https://yourhost/api": "b6a68585-5287-45b2-ba82-383ba1f60932",
-    };
-vssalAuthenticationServiceProvider.init(
+	vssalAuthenticationServiceProvider.init(
         {
-            // Config to specify endpoints and similar for your app
-            tenant: "52d4b072-9470-49fb-8721-bc3a1c9912a1", // Optional by default, it sends common
-            clientId: "e9a5a8b6-8af7-4719-9821-0deef255f68e", // Required
-            //localLoginUrl: "/login",  // optional
-            //redirectUri : "your site", optional
-            endpoints: endpoints  // If you need to send CORS api requests.
+		auto: true,	   
+		clientId: '00000000-0000-0000-0000-000000000000',
+		client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
+		scope: 'vso.connected_server vso.identity vso.work_write ...'
         },
         $httpProvider   // pass http provider to inject request interceptor to attach tokens
         );
@@ -162,22 +156,4 @@ app.controller('homeController', ['$scope', '$location', 'vssalAuthenticationSer
 
 
 ```
-
-### Cache Location
-Default storage location is sessionStorage. You can specify localStorage in the config as well.
-
-```js
-vssalAuthenticationServiceProvider.init(
-        {
-            // Config to specify endpoints and similar for your app
-            clientId: 'cb68f72f...',
-            cacheLocation: 'localStorage' // optional cache location default is sessionStorage
-        },
-        $httpProvider   // pass http provider to inject request interceptor to attach tokens
-        );
-```
-
-### Security
-Tokens are accessible from javascript since vssal.JS is using HTML5 storage. Default storage option is sessionStorage, which keeps the tokens per session. You should ask user to login again for important operations on your app.
-You should protect your site for XSS. Please check the article here: https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
  
