@@ -25,10 +25,7 @@ Current version - 0.2
 Via Bower:
 
     $ bower install vssal-angular
-
-The vssal.js source is [here](https://github.com/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js/tree/master/lib/vssal.js).
-The vssal-angular.js source is [here](https://github.com/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js/tree/master/lib/vssal-angular.js).
- 
+  
 **Quick usage guide**
 
 Below you can find a quick reference for the most common operations you need to perform to use vssal js.
@@ -51,14 +48,14 @@ Without the hashPrefix set, the Visual Studio Online login will loop indefinitel
 
 4- Initialize vssal with the Visual Studio Online app coordinates at app config time
 ```js
-	vssalAuthenticationServiceProvider.init(
-        { 	   
+vssalAuthenticationServiceProvider.init(
+{ 	   
 		clientId: '00000000-0000-0000-0000-000000000000',
 		client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
 		scope: 'vso.connected_server vso.identity vso.work_write ...'
-        },
-        	$httpProvider   // pass http provider to inject request interceptor to attach tokens
-        );
+},
+	$httpProvider   // pass http provider to inject request interceptor to attach tokens
+);
 ```
 5- Define which routes you want to secure via vssal - by adding `requireVSOLogin: true` to their definition
 ```js
