@@ -57,7 +57,7 @@ Without the hashPrefix set, the Visual Studio Online login will loop indefinitel
 		client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
 		scope: 'vso.connected_server vso.identity vso.work_write ...'
         },
-        $httpProvider   // pass http provider to inject request interceptor to attach tokens
+        	$httpProvider   // pass http provider to inject request interceptor to attach tokens
         );
 ```
 5- Define which routes you want to secure via vssal - by adding `requireVSOLogin: true` to their definition
@@ -82,10 +82,10 @@ $routeProvider.
 </head>
 <body ng-app="vssalDemo" ng-controller="homeController" ng-init="init()"> 
     <!--These links are added to manage login/logout-->
-    <div data-ng-model="userInfo">
-        <span data-ng-hide="!userInfo.isAuthenticated">Welcome {{userInfo.userName}} </span>
-        <button data-ng-hide="!userInfo.isAuthenticated" data-ng-click="logout()">Logout</button>
-        <button data-ng-hide="userInfo.isAuthenticated" data-ng-click="login()">Login</button>
+    <div>
+        <span ng-hide="!userInfo.isAuthenticated">Welcome {{userInfo.userName}} </span>
+        <button ng-hide="!userInfo.isAuthenticated"  ng-click="logout()">Logout</button>
+        <button ng-hide="userInfo.isAuthenticated"  ng-click="login()">Login</button>
 
         <div>
             {{userInfo.loginError}}
@@ -107,8 +107,8 @@ $routeProvider.
 7- You have full control on how to trigger sign in, sign out and how to deal with errors:
 
 ```js
-'use strict';
-app.controller('homeController', ['$scope', '$location', 'vssalAuthenticationService', function ($scope, $location, vssalAuthenticationService) {
+app.controller('homeController', ['$scope', '$location', 'vssalAuthenticationService', 
+function ($scope, $location, vssalAuthenticationService) {
     // this is referencing vssal module to do login
 
     //userInfo is defined at the $rootscope with vssalAngular module
@@ -135,14 +135,7 @@ app.controller('homeController', ['$scope', '$location', 'vssalAuthenticationSer
         $scope.testMessage = "loginFailure";
         $location.path("/login");
     });
-
-    // optional
-    $scope.$on("vssal:notAuthorized", function (event, rejection, forResource) {
-        $scope.testMessage = "It is not Authorized for resource:" + forResource;
-    });
-
+ 
 }]);
-
-
 ```
  
