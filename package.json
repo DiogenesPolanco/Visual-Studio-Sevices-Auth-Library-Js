@@ -10,16 +10,16 @@
         "type": "git",
         "url": "https://github.com/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js.git"
     },
-    "version": "0.0.1",
+    "version": "0.2",
     "description": "Visual Studio Sevices Auth Library for js",
-    "keywords": [ 
+    "keywords": [
         "js",
         "tfs",
         "vs",
         "vssal",
         "oauth"
     ],
-    "main": "./lib/vssal.js",
+    "main": "./lib/vssal-angular.js",
     "engines": {
         "node": ">=0.8.0"
     },

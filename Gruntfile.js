@@ -44,8 +44,7 @@ module.exports = function(grunt) {
                 // Because these src-dest file mappings are manually specified, every
                 // time a new file is added or removed, the Gruntfile has to be updated.
                 files: [
-                    { src: 'lib/vssal.js', dest: 'dist/vssal.min.js' },
-                    { src: 'lib/vssal-angular.js', dest: 'dist/vssal-angular.min.js' },
+                    { src: 'lib/vssal-angular.js', dest: 'dist/vssal-angular.js' },
                 ],
             }
         },

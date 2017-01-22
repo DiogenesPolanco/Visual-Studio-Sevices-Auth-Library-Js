@@ -1,15 +1,12 @@
 {
     "name": "vssal-angular",
-    "version": "0.0.1",
+    "version": "0.2",
     "homepage": "https://github.com/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js",
     "authors": [
         "diogenespolanco"
     ],
     "description": "Visual Studio Sevices Auth Library for js",
-    "main": [
-        "./lib/vssal.js",
-        "./lib/vssal-angular.js"
-    ],
+    "main": ["./lib/vssal-angular.js"],
     "moduleType": [
         "node"
     ],
