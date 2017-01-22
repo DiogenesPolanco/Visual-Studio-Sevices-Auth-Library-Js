@@ -80,11 +80,7 @@ $routeProvider.
 <head>
     <title>Angular vssal Sample</title>
 </head>
-<body ng-app="vssalDemo" ng-controller="homeController" ng-init="hmCtl.init()">
-    <a href="#">Home</a>
-    <a href="#/todoList">ToDo List</a>
-
-
+<body ng-app="vssalDemo" ng-controller="homeController" ng-init="init()"> 
     <!--These links are added to manage login/logout-->
     <div data-ng-model="userInfo">
         <span data-ng-hide="!userInfo.isAuthenticated">Welcome {{userInfo.userName}} </span>
@@ -93,23 +89,18 @@ $routeProvider.
 
         <div>
             {{userInfo.loginError}}
-        </div>
-        <div>
-            {{testMessage}}
-        </div>
+        </div> 
     </div>
     <div ng-view>
         Your view will appear here.
     </div>
 
-    <script src="/Scripts/angular.min.js"></script>
-    <script src="/Scripts/angular-route.min.js"></script> 
-    <script src="/Scripts/vssal-angular.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script> 
+    <script src="/bower_components/vssal-angular/dist/vssal-angular.js"></script>
     <script src="App/Scripts/app.js"></script>
-    <script src="App/Scripts/homeController.js"></script>
-    <script src="App/Scripts/todoDetailController.js"></script>
-    <script src="App/Scripts/todoListController.js"></script>
-    <script src="App/Scripts/todoService.js"></script>
+    <script src="App/Scripts/homeController.js"></script> 
+    <script src="App/Scripts/todoListController.js"></script> 
 </body>
 </html>
 ```
