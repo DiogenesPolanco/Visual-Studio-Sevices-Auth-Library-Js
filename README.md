@@ -95,7 +95,7 @@ $routeProvider.
 7- You have full control on how to trigger sign in, sign out and how to deal with errors:
 
 ```js
-app.controller('homeController', ['$scope', '$location', 'vssalAuthenticationService', 'vssalVisualStudioService'
+app.controller('homeController', ['$scope', 'vssalAuthenticationService', 'vssalVisualStudioService'
 function ($scope, $location, vssalAuthenticationService, vssalVisualStudioService) { 
     //userInfo is defined at the $rootscope with vssalAngular module
     $scope.testMessage = "";
