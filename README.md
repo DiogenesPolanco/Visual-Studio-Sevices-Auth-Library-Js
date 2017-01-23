@@ -30,7 +30,7 @@ Via Bower:
 
 Below you can find a quick reference for the most common operations you need to perform to use vssal js.
 
-1- Include references to angular.js libraries, vssal.js, vssal-angular.js in your main app page.
+1- Include references to angular.js libraries, vssal-angular.js in your main app page.
 
 2- include a reference to vssal module
 ```js
@@ -50,9 +50,9 @@ Without the hashPrefix set, the Visual Studio Online login will loop indefinitel
 ```js
 vssalAuthenticationServiceProvider.init(
 { 	   
-		clientId: '00000000-0000-0000-0000-000000000000',
-		client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
-		scope: 'vso.connected_server vso.identity vso.work_write ...'
+	clientId: '00000000-0000-0000-0000-000000000000',
+	client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
+	scope: 'vso.connected_server vso.identity vso.work_write ...'
 },
 	$httpProvider   // pass http provider to inject request interceptor to attach tokens
 );
@@ -86,6 +86,7 @@ $routeProvider.
 
         <div>
             {{userInfo.loginError}}
+	    {{testMessage}}
         </div> 
     </div>
     <div ng-view>
@@ -104,35 +105,27 @@ $routeProvider.
 7- You have full control on how to trigger sign in, sign out and how to deal with errors:
 
 ```js
-app.controller('homeController', ['$scope', '$location', 'vssalAuthenticationService', 
-function ($scope, $location, vssalAuthenticationService) {
-    // this is referencing vssal module to do login
-
+app.controller('homeController', ['$scope', '$location', 'vssalAuthenticationService', 'vssalVisualStudioService'
+function ($scope, $location, vssalAuthenticationService, vssalVisualStudioService) { 
     //userInfo is defined at the $rootscope with vssalAngular module
     $scope.testMessage = "";
     $scope.init = function () {
-        $scope.testMessage = "";
+        if (vssalAuthenticationService.userInfo.isAuthenticated) {
+	    vssalVisualStudioService.GetMyProfile().then(function(profile) {
+		$scope.profile = profile;
+	    });
+	}
     };
-
     $scope.logout = function () {
         vssalAuthenticationService.logOut();
     };
-
     $scope.login = function () {
         vssalAuthenticationService.login();
     };
-
     // optional
     $scope.$on("vssal:loginSuccess", function () {
         $scope.testMessage = "loginSuccess";
-    });
-
-    // optional
-    $scope.$on("vssal:loginFailure", function () {
-        $scope.testMessage = "loginFailure";
-        $location.path("/login");
-    });
- 
+    });     
 }]);
 ```
  
