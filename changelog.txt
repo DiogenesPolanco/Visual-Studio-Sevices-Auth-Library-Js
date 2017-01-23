@@ -1,0 +1,10 @@
+
+Version 0.2
+=========================
+* Autorización a las APIs de VSTS desde JavaScript aseguradas con OAuth 2.0
+* Using Visual Studio Team Services the current profile 
+
+Version 0.1
+=========================
+* Inicio de sesión único (SSO)
+* Acceso a la cuenta de usuario o perfil autenticado de visual studio online.
