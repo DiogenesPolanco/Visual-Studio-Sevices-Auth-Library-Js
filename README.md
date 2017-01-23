@@ -79,10 +79,9 @@ $routeProvider.
 <body ng-app="vssalDemo" ng-controller="homeController" ng-init="init()"> 
     <!--These links are added to manage login/logout-->
     <div>
-        <span ng-hide="!userInfo.isAuthenticated">Welcome {{userInfo.userName}} </span>
-        <button ng-hide="!userInfo.isAuthenticated"  ng-click="logout()">Logout</button>
-        <button ng-hide="userInfo.isAuthenticated"  ng-click="login()">Login</button>
-
+	<span ng-show="userInfo.isAuthenticated">Welcome {{CurrentProfile.profile.displayName}}</span>
+	<button ng-show="userInfo.isAuthenticated" ng-click="logout()">Logout</button>
+	<button ng-hide="userInfo.isAuthenticated" ng-click="login()">Login</button>
         <div>
             {{userInfo.loginError}}
 	    {{testMessage}}
@@ -91,7 +90,6 @@ $routeProvider.
     <div ng-view>
         Your view will appear here.
     </div>
-
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script> 
     <script src="/bower_components/vssal-angular/dist/vssal-angular.js"></script>
@@ -111,7 +109,7 @@ function ($scope, $location, vssalAuthenticationService, vssalVisualStudioServic
     $scope.init = function () {
         if (vssalAuthenticationService.userInfo.isAuthenticated) {
 	    vssalVisualStudioService.GetMyProfile().then(function(profile) {
-		$scope.profile = profile;
+		$scope.CurrentProfile = profile;
 	    });
 	}
     };
