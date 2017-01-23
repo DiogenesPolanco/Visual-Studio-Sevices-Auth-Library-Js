@@ -1,4 +1,3 @@
-
 Version 0.2
 =========================
 * Autorización a las APIs de VSTS desde JavaScript aseguradas con OAuth 2.0
