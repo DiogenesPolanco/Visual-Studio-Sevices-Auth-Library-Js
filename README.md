@@ -38,14 +38,23 @@ var app = angular.module('demoApp', ['ngRoute', 'vssalAngular']);
 ```
 3- Initialize vssal with the Visual Studio Online app coordinates at app config time
 ```js
-vssalAuthenticationServiceProvider.init(
-{ 	   
-	clientId: '00000000-0000-0000-0000-000000000000',
-	client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
-	scope: 'vso.connected_server vso.identity vso.work_write ...'
-},
+app.config(['$routeProvider', '$httpProvider', 'vssalAuthenticationServiceProvider',
+    function($routeProvider, $httpProvider, vssalAuthenticationServiceProvider) {	    
+	vssalAuthenticationServiceProvider.init(
+	{ 	   
+		clientId: '00000000-0000-0000-0000-000000000000',
+		client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
+		scope: 'vso.connected_server vso.identity vso.work_write ...'
+	},
 	$httpProvider   // pass http provider to inject request interceptor to attach tokens
-);
+	);
+	// configure html5 to get links working on jsfiddle
+	$locationProvider.html5Mode({
+	    enabled: true,
+	    requireBase: false
+	});
+    }
+]);
 ```
 4- Define which routes you want to secure via vssal - by adding `requireVSOLogin: true` to their definition
 ```js
