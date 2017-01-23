@@ -40,19 +40,19 @@ var app = angular.module('demoApp', ['ngRoute', 'vssalAngular']);
 ```js
 app.config(['$routeProvider', '$httpProvider', 'vssalAuthenticationServiceProvider',
     function($routeProvider, $httpProvider, vssalAuthenticationServiceProvider) {	    
-	vssalAuthenticationServiceProvider.init(
-	{ 	   
-		clientId: '00000000-0000-0000-0000-000000000000',
-		client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
-		scope: 'vso.connected_server vso.identity vso.work_write ...'
-	},
-	$httpProvider   // pass http provider to inject request interceptor to attach tokens
-	);
-	// configure html5 to get links working on jsfiddle
-	$locationProvider.html5Mode({
-	    enabled: true,
-	    requireBase: false
-	});
+		vssalAuthenticationServiceProvider.init(
+		{ 	   
+			clientId: '00000000-0000-0000-0000-000000000000',
+			client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
+			scope: 'vso.connected_server vso.identity vso.work_write ...'
+		},
+		$httpProvider   // pass http provider to inject request interceptor to attach tokens
+		);
+		// configure html5 to get links working on jsfiddle
+		$locationProvider.html5Mode({
+		    enabled: true,
+		    requireBase: false
+		});
     }
 ]);
 ```
