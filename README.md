@@ -36,17 +36,7 @@ Below you can find a quick reference for the most common operations you need to 
 ```js
 var app = angular.module('demoApp', ['ngRoute', 'vssalAngular']);
 ```
-3- ***When HTML5 mode is configured***, ensure the $locationProvider hashPrefix is set
-```js
-	// using '!' as the hashPrefix but can be a character of your choosing
-	app.config(['$locationProvider', function($locationProvider) {
-		$locationProvider.html5Mode(true).hashPrefix('!');
-	}]);
-```
-
-Without the hashPrefix set, the Visual Studio Online login will loop indefinitely as the callback URL from Visual Studio Online (in the form of, {yourBaseUrl}/#{VSOTokenAndState}) will be rewritten to remove the '#' causing the token parsing to fail and login sequence to occur again.
-
-4- Initialize vssal with the Visual Studio Online app coordinates at app config time
+3- Initialize vssal with the Visual Studio Online app coordinates at app config time
 ```js
 vssalAuthenticationServiceProvider.init(
 { 	   
@@ -57,7 +47,7 @@ vssalAuthenticationServiceProvider.init(
 	$httpProvider   // pass http provider to inject request interceptor to attach tokens
 );
 ```
-5- Define which routes you want to secure via vssal - by adding `requireVSOLogin: true` to their definition
+4- Define which routes you want to secure via vssal - by adding `requireVSOLogin: true` to their definition
 ```js
 $routeProvider.
     when("/todoList", {
@@ -67,10 +57,10 @@ $routeProvider.
     });
 
 ```
-6- Any service invocation code you might have will remain unchanged. vssal's interceptor will automatically add tokens for every outgoing call.
+5- Any service invocation code you might have will remain unchanged. vssal's interceptor will automatically add tokens for every outgoing call.
 
 ***Optional***
-7- If you so choose, in addition (or substitution) to route level protection you can add explicit login/logout UX elements. Furthermore, you can access properties of the currently signed in user directly form JavaScript (via userInfo and userInfo.profile):
+6- If you so choose, in addition (or substitution) to route level protection you can add explicit login/logout UX elements. Furthermore, you can access properties of the currently signed in user directly form JavaScript (via userInfo and userInfo.profile):
 ```html
 <!DOCTYPE html>
 <html>
