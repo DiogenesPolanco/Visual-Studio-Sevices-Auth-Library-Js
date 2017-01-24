@@ -113,6 +113,24 @@ function ($scope, $location, vssalAuthenticationService, vssalVisualStudioServic
 	    });
 	}
     };
+    $scope.createWorkItem = function() {
+    	var content = 'SG9sYSBNdW5kbyE='; // btoa('Hola Mundo!')
+	vssalVisualStudioService.UploadAttachment('readme.txt', content).then(function(attachment) {
+		vssalVisualStudioService.CreateWorkItem({
+		    project: 'MyProject',
+		    type: 'Bug',//Bug, Task, Code Review, Feature, Feedback, etc...
+		    title: 'Error when after login',
+		    assignedTo: "Diogenes Polanco Martinez <diogenespolancomartinez@gmail.com>",
+		    description: 'Repro Steps Description',
+		    attachment: {
+			url: attachment.url,
+			comment: "file comment"
+		    }
+		}).then(function(response) {
+		    console.log(response);
+		});
+	});
+    };
     $scope.logout = function () {
         vssalAuthenticationService.logOut();
     };
