@@ -18,6 +18,8 @@ _ReSharper*/
 #Tests
 tests/
 
+.vscode/
+
 #NuGet
 packages/
 *.nupkg
