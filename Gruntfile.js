@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> v<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                banner: '/*! <%= pkg.name %>  */\n'
             },
             static_mappings: {
                 // Because these src-dest file mappings are manually specified, every
