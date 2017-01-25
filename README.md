@@ -19,7 +19,7 @@ You'll call the authorization URL and pass your app ID and authorized scopes whe
 The settings for each app that you register are available from your profile (https://app.vssps.visualstudio.com/profile/view).
 
 ## Versions
-Current version - 0.2  
+Current version - 0.3  
  
 ## Instalation
 Via Bower:
