@@ -43,7 +43,7 @@ app.config(['$routeProvider', '$httpProvider', 'vssalAuthenticationServiceProvid
 		vssalAuthenticationServiceProvider.init(
 		{ 	   
 			clientId: '00000000-0000-0000-0000-000000000000',
-			tenant:'MyPersonalVisualStudio', // extract from https://MyPersonalVisualStudio.visualstudio.com
+			tenant:'YourVisualStudioAccount', // extract from https://YourVisualStudioAccount.visualstudio.com
 			client_assertion: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI...',
 			scope: 'vso.connected_server vso.identity vso.work_write ...'
 		},
