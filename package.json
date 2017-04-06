@@ -1,35 +1,15 @@
 {
     "name": "vssal-angular",
-    "author": {
-        "name": "Microsoft",
-        "email": "diogenespolancomartinez@gmail.com",
-        "url": "http://diogenespolanco.com"
-    },
-    "license": "Apache-2.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js.git"
-    },
-    "version": "0.0.1",
-    "description": "Visual Studio Sevices Auth Library for js",
-    "keywords": [
-        "js",
-        "tfs",
-        "vs",
-        "vssal",
-        "oauth"
+    "version": "0.0.2",
+    "authors": [
+        "diogenespolanco"
     ],
-    "main": "./lib/vssal-angular.js",
-    "engines": {
-        "node": ">=0.8.0"
-    },
+    "main": "lib/vssal-angular.js",
     "dependencies": {},
     "devDependencies": {
-        "jasmine-node": "~1.14.5",
-        "jshint": "*",
+        "atob": "~1.1.2",
         "grunt": "^0.4.5",
         "grunt-cli": "^0.1.13",
-        "grunt-jsdoc": "~0.5.7",
         "grunt-contrib-clean": "~0.5.0",
         "grunt-contrib-concat": "^0.3.0",
         "grunt-contrib-connect": "^0.7.1",
@@ -37,18 +17,13 @@
         "grunt-contrib-jshint": "^0.10.0",
         "grunt-contrib-uglify": "~0.6.0",
         "grunt-contrib-watch": "~0.2.0",
+        "grunt-jasmine-node": "~0.2.1",
+        "grunt-jsdoc": "~0.5.7",
         "grunt-karma": "^0.9.x",
-        "atob": "~1.1.2",
-        "karma-chrome-launcher": "^0.1.5",
+        "jasmine-node": "~1.14.5",
+        "jshint": "*",
         "karma": "^0.12.24",
-        "karma-jasmine": "^0.1.5",
-        "bower": "^1.3.3",
-        "grunt-jasmine-node": "~0.2.1"
-    },
-    "directories": {
-        "test": "tests"
-    },
-    "scripts": {
-        "test": "jasmine-node tests/unit/spec"
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5"
     }
 }

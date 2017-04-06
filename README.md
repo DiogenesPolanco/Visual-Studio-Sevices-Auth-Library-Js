@@ -22,9 +22,11 @@ The settings for each app that you register are available from your profile (htt
 Current version - 0.3  
  
 ## Instalation
-Via Bower:
+Via Bower, npm and yarn:
 
     $ bower install vssal-angular
+    $ npm install vssal-angular
+    $ yarn install vssal-angular
   
 **Quick usage guide**
 
