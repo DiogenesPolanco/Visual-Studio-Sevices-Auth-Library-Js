@@ -7,7 +7,7 @@
     "main": "lib/vssal-angular.js",
     "dependencies": {},
     "devDependencies": {
-        "atob": "~1.1.2",
+        "atob": ">=2.1.0",
         "grunt": "^0.4.5",
         "grunt-cli": "^0.1.13",
         "grunt-contrib-clean": "~0.5.0",
