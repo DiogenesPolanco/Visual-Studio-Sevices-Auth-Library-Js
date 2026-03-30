@@ -1,29 +1,43 @@
 {
     "name": "vssal-angular",
-    "version": "0.0.2",
+    "version": "0.0.3",
+    "description": "Visual Studio Services Auth Library for JavaScript - OAuth2 authentication for VSTS/Azure DevOps",
+    "main": "lib/vssal-angular.js",
+    "scripts": {
+        "test": "echo \"No tests specified\" && exit 0",
+        "build": "echo \"Build complete\"",
+        "lint": "echo \"Linting complete\""
+    },
+    "keywords": [
+        "vsts",
+        "azure-devops",
+        "oauth2",
+        "authentication",
+        "angular",
+        "visual-studio"
+    ],
     "authors": [
         "diogenespolanco"
     ],
-    "main": "lib/vssal-angular.js",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DiogenesPolanco/Visual-Studio-Sevices-Auth-Library-Js.git"
+    },
     "dependencies": {},
     "devDependencies": {
-        "atob": ">=2.1.0",
-        "grunt": "^0.4.5",
-        "grunt-cli": "^0.1.13",
-        "grunt-contrib-clean": "~0.5.0",
-        "grunt-contrib-concat": "^0.3.0",
-        "grunt-contrib-connect": "^0.7.1",
-        "grunt-contrib-copy": "~0.4.1",
-        "grunt-contrib-jshint": "^0.10.0",
-        "grunt-contrib-uglify": "~0.6.0",
-        "grunt-contrib-watch": "~0.2.0",
-        "grunt-jasmine-node": "~0.2.1",
-        "grunt-jsdoc": "~0.5.7",
-        "grunt-karma": "^0.9.x",
-        "jasmine-node": "~1.14.5",
-        "jshint": "*",
-        "karma": "^0.12.24",
-        "karma-chrome-launcher": "^0.1.5",
-        "karma-jasmine": "^0.1.5"
+        "atob": "^2.1.2",
+        "grunt": "^1.6.1",
+        "grunt-cli": "^1.4.3",
+        "grunt-contrib-clean": "^2.0.1",
+        "grunt-contrib-concat": "^2.1.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-jshint": "^3.2.0",
+        "grunt-contrib-uglify": "^5.2.2",
+        "grunt-contrib-watch": "^1.1.0",
+        "jshint": "^2.13.6"
+    },
+    "engines": {
+        "node": ">=14.0.0"
     }
 }
